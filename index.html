@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="A simple personal portfolio for Ayerna."
+    />
+    <title>Ayerna | Portfolio</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --background: #f5f7fb;
+        --surface: #ffffff;
+        --text: #172033;
+        --muted: #5d687c;
+        --accent: #4f46e5;
+        --accent-dark: #3730a3;
+        --border: #e3e7ef;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+        color: var(--text);
+        background: var(--background);
+        line-height: 1.6;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .container {
+        width: min(100% - 2rem, 960px);
+        margin: 0 auto;
+      }
+
+      header {
+        padding: 1.25rem 0;
+        border-bottom: 1px solid var(--border);
+        background: var(--surface);
+      }
+
+      nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      .logo {
+        font-weight: 800;
+        text-decoration: none;
+        letter-spacing: -0.03em;
+      }
+
+      nav ul {
+        display: flex;
+        gap: 1rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        color: var(--muted);
+      }
+
+      nav a {
+        text-decoration: none;
+      }
+
+      nav a:hover,
+      nav a:focus-visible {
+        color: var(--accent);
+      }
+
+      .hero {
+        display: grid;
+        min-height: 72vh;
+        align-items: center;
+        padding: 5rem 0;
+      }
+
+      .eyebrow {
+        margin: 0 0 0.75rem;
+        color: var(--accent);
+        font-size: 0.85rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2 {
+        margin-top: 0;
+        line-height: 1.1;
+        letter-spacing: -0.04em;
+      }
+
+      h1 {
+        max-width: 700px;
+        margin-bottom: 1.25rem;
+        font-size: clamp(2.75rem, 8vw, 5.5rem);
+      }
+
+      .hero p {
+        max-width: 600px;
+        margin-bottom: 2rem;
+        color: var(--muted);
+        font-size: 1.15rem;
+      }
+
+      .button {
+        display: inline-block;
+        padding: 0.8rem 1.2rem;
+        border-radius: 0.6rem;
+        color: #fff;
+        background: var(--accent);
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .button:hover,
+      .button:focus-visible {
+        background: var(--accent-dark);
+      }
+
+      section {
+        padding: 4rem 0;
+      }
+
+      .section-heading {
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+      }
+
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+      }
+
+      .card {
+        padding: 1.5rem;
+        border: 1px solid var(--border);
+        border-radius: 0.8rem;
+        background: var(--surface);
+      }
+
+      .card h3 {
+        margin-top: 0;
+        margin-bottom: 0.5rem;
+      }
+
+      .card p {
+        margin: 0;
+        color: var(--muted);
+      }
+
+      .contact {
+        margin-bottom: 4rem;
+        padding: 2rem;
+        border-radius: 0.8rem;
+        color: #fff;
+        background: var(--text);
+      }
+
+      .contact h2 {
+        margin-bottom: 0.75rem;
+      }
+
+      .contact p {
+        margin: 0 0 1rem;
+        color: #c6ccda;
+      }
+
+      footer {
+        padding: 1.5rem 0;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 0.9rem;
+        text-align: center;
+      }
+
+      @media (max-width: 700px) {
+        nav ul {
+          gap: 0.65rem;
+          font-size: 0.9rem;
+        }
+
+        .hero {
+          min-height: auto;
+          padding: 5rem 0 4rem;
+        }
+
+        .cards {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <nav aria-label="Primary navigation">
+          <a class="logo" href="#">Ayerna</a>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <p class="eyebrow">Welcome to my portfolio</p>
+          <h1>Building thoughtful digital experiences.</h1>
+          <p>
+            I’m Ayerna, a curious creator who enjoys turning ideas into useful,
+            polished, and accessible products.
+          </p>
+          <a class="button" href="#work">See my work</a>
+        </div>
+      </section>
+
+      <section id="about">
+        <div class="container">
+          <p class="eyebrow">A little about me</p>
+          <h2 class="section-heading">Ideas into impact.</h2>
+          <p>
+            This portfolio is a starting point. I’m currently updating it with
+            more details about my experience, skills, and the projects I’m
+            proud of.
+          </p>
+        </div>
+      </section>
+
+      <section id="work">
+        <div class="container">
+          <p class="eyebrow">Selected work</p>
+          <h2 class="section-heading">Things I’m working on.</h2>
+          <div class="cards">
+            <article class="card">
+              <h3>Project One</h3>
+              <p>A short description of a project, its goals, and its impact.</p>
+            </article>
+            <article class="card">
+              <h3>Project Two</h3>
+              <p>A short description of a project, its goals, and its impact.</p>
+            </article>
+            <article class="card">
+              <h3>Project Three</h3>
+              <p>A short description of a project, its goals, and its impact.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container">
+          <div class="contact">
+            <h2>Let’s connect.</h2>
+            <p>Have an opportunity or an idea? I’d love to hear from you.</p>
+            <a class="button" href="mailto:hello@example.com">Get in touch</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">© 2026 Ayerna. Built with HTML and CSS.</div>
+    </footer>
+  </body>
+</html>
