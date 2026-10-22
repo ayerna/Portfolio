@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta
       name="description"
-      content="A simple personal portfolio for Ayerna."
+      content="Portfolio of Gladwin Benjamin, a software engineering student focused on software, cloud, and AI engineering."
     />
-    <title>Ayerna | Portfolio</title>
+    <title>Gladwin Benjamin | Portfolio</title>
     <style>
       :root {
         color-scheme: light;
@@ -150,6 +150,10 @@
         gap: 1rem;
       }
 
+      .cards-wide {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
       .card {
         padding: 1.5rem;
         border: 1px solid var(--border);
@@ -165,6 +169,21 @@
       .card p {
         margin: 0;
         color: var(--muted);
+      }
+
+      .card h4 {
+        margin: 1rem 0 0.25rem;
+      }
+
+      .card h4:first-child {
+        margin-top: 0;
+      }
+
+      .tags {
+        margin-top: 1rem !important;
+        color: var(--accent) !important;
+        font-size: 0.9rem;
+        font-weight: 700;
       }
 
       .card a {
@@ -220,6 +239,10 @@
         .cards {
           grid-template-columns: 1fr;
         }
+
+        .cards-wide {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
@@ -227,10 +250,11 @@
     <header>
       <div class="container">
         <nav aria-label="Primary navigation">
-          <a class="logo" href="#">Ayerna</a>
+          <a class="logo" href="#">Gladwin Benjamin</a>
           <ul>
             <li><a href="#about">About</a></li>
             <li><a href="#work">Work</a></li>
+            <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
@@ -241,10 +265,11 @@
       <section class="hero">
         <div class="container">
           <p class="eyebrow">Welcome to my portfolio</p>
-          <h1>Building thoughtful digital experiences.</h1>
+          <h1>Software, cloud, and AI engineering.</h1>
           <p>
-            I’m Ayerna, a curious creator who enjoys turning ideas into useful,
-            polished, and accessible products.
+            I’m Gladwin Benjamin, a final-year B.Tech Computer Science student
+            at SRM IST focused on building efficient, reliable, and
+            intelligent software.
           </p>
           <a class="button" href="#work">See my work</a>
         </div>
@@ -253,19 +278,44 @@
       <section id="about">
         <div class="container">
           <p class="eyebrow">A little about me</p>
-          <h2 class="section-heading">Ideas into impact.</h2>
+          <h2 class="section-heading">Building useful systems from first principles.</h2>
           <p>
-            This portfolio is a starting point. I’m currently updating it with
-            more details about my experience, skills, and the projects I’m
-            proud of.
+            Final-year B.Tech Computer Science student with hands-on experience
+            across software development, AI/ML, and cloud engineering. Skilled
+            in C++ and Python, with experience building LLM-based applications
+            and AWS infrastructure using Docker, Kubernetes, and Terraform.
+            I enjoy solving complex problems with strong foundations in data
+            structures, algorithms, REST APIs, Linux, and CI/CD.
           </p>
+          <div class="cards cards-wide" style="margin-top: 1.5rem;">
+            <article class="card">
+              <h3>Education</h3>
+              <h4>B.Tech, Computer Science and Engineering – Software Engineering</h4>
+              <p>SRM IST-Kattankulathur · Expected 2027 · CGPA 9.27/10</p>
+              <h4>Class XII · CBSE</h4>
+              <p>Rhema International School, Punjab · 83%</p>
+              <h4>Class X · CBSE</h4>
+              <p>Rhema International School, Punjab · 75.2%</p>
+            </article>
+            <article class="card">
+              <h3>Certifications</h3>
+              <p>AWS Certified Developer – Associate</p>
+              <p>AWS Certified Cloud Practitioner</p>
+              <p>AWS Certified AI Practitioner</p>
+              <h4>Activities</h4>
+              <p>
+                CINTEL Student Association — Event Management Team. Organized
+                3+ hackathons and technical events with 200+ participants.
+              </p>
+            </article>
+          </div>
         </div>
       </section>
 
       <section id="work">
         <div class="container">
           <p class="eyebrow">Selected work</p>
-          <h2 class="section-heading">Things I’m working on.</h2>
+          <h2 class="section-heading">Projects with practical impact.</h2>
           <div class="cards">
             <article class="card">
               <h3>SkillBridge</h3>
@@ -280,6 +330,7 @@
               <a href="https://github.com/ayerna/SkillBridge" target="_blank" rel="noreferrer">
                 View source code
               </a>
+              <p class="tags">React.js · Node.js · REST APIs · Agile/Scrum</p>
             </article>
             <article class="card">
               <h3>RNTBCI POC 5</h3>
@@ -291,6 +342,7 @@
               <a href="https://github.com/ayerna/RNTBCI-POC-5-demo" target="_blank" rel="noreferrer">
                 View source code
               </a>
+              <p class="tags">Python · Pandas · Ollama · LLMs</p>
             </article>
             <article class="card">
               <h3>Diabetes Risk Predictor</h3>
@@ -305,6 +357,7 @@
               <a href="https://github.com/ayerna/Diabetes-Risk-Predictor" target="_blank" rel="noreferrer">
                 View source code
               </a>
+              <p class="tags">Python · Streamlit · scikit-learn · SHAP</p>
             </article>
             <article class="card">
               <h3>YouTube Downloader</h3>
@@ -316,6 +369,40 @@
               <a href="https://github.com/ayerna/YouTubeDownloader" target="_blank" rel="noreferrer">
                 View source code
               </a>
+              <p class="tags">Python · Tkinter · yt-dlp · FFmpeg</p>
+            </article>
+            <article class="card">
+              <h3>Self-Healing Cloud Infrastructure</h3>
+              <p>
+                A cloud engineering solution that detects infrastructure
+                failures and restores affected services automatically, reducing
+                manual intervention and improving operational resilience.
+              </p>
+              <p class="tags">AWS · Terraform · Python · Linux · Docker</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="skills">
+        <div class="container">
+          <p class="eyebrow">What I work with</p>
+          <h2 class="section-heading">Skills and interests.</h2>
+          <div class="cards cards-wide">
+            <article class="card">
+              <h3>Programming and tools</h3>
+              <p>
+                Python · C++ · SQL · Bash · AWS · Docker · Kubernetes ·
+                Terraform · Git · GitHub · Jenkins · Linux
+              </p>
+            </article>
+            <article class="card">
+              <h3>Engineering strengths</h3>
+              <p>
+                Data Structures &amp; Algorithms · OOP · REST APIs · DBMS ·
+                CI/CD · Software Testing · Distributed Systems · LLMs · Agile
+                · Scrum · AI Engineering
+              </p>
             </article>
           </div>
         </div>
@@ -324,16 +411,26 @@
       <section id="contact">
         <div class="container">
           <div class="contact">
-            <h2>Let’s connect.</h2>
-            <p>Have an opportunity or an idea? I’d love to hear from you.</p>
-            <a class="button" href="mailto:hello@example.com">Get in touch</a>
+            <h2>Let’s build something reliable.</h2>
+            <p>
+              Open to conversations about software engineering, cloud
+              infrastructure, AI/ML, and meaningful project opportunities.
+            </p>
+            <p>
+              gb5608@srmist.edu.in · 7814861743
+            </p>
+            <p>Chengalpattu, Tamil Nadu · B.Tech expected 2027</p>
+            <a class="button" href="mailto:gb5608@srmist.edu.in">Get in touch</a>
+            <a class="button" href="https://github.com/ayerna" target="_blank" rel="noreferrer">
+              GitHub
+            </a>
           </div>
         </div>
       </section>
     </main>
 
     <footer>
-      <div class="container">© 2026 Ayerna. Built with HTML and CSS.</div>
+      <div class="container">© 2026 Gladwin Benjamin. Built with HTML and CSS.</div>
     </footer>
   </body>
 </html>
