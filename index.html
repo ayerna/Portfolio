@@ -167,6 +167,20 @@
         color: var(--muted);
       }
 
+      .card a {
+        display: inline-block;
+        margin-top: 1rem;
+        color: var(--accent);
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .card a:hover,
+      .card a:focus-visible {
+        color: var(--accent-dark);
+        text-decoration: underline;
+      }
+
       .contact {
         margin-bottom: 4rem;
         padding: 2rem;
@@ -254,8 +268,18 @@
           <h2 class="section-heading">Things I’m working on.</h2>
           <div class="cards">
             <article class="card">
-              <h3>Project One</h3>
-              <p>A short description of a project, its goals, and its impact.</p>
+              <h3>SkillBridge</h3>
+              <p>
+                A peer-to-peer skill exchange platform for students, built with
+                Next.js, Firebase, and SendGrid. Students can offer and request
+                skills, connect through messaging, and manage their profiles.
+              </p>
+              <a href="https://skbridgesrm.vercel.app/" target="_blank" rel="noreferrer">
+                View live project
+              </a>
+              <a href="https://github.com/ayerna/SkillBridge" target="_blank" rel="noreferrer">
+                View source code
+              </a>
             </article>
             <article class="card">
               <h3>Project Two</h3>
