@@ -1,436 +1,494 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Portfolio of Gladwin Benjamin, a software engineering student focused on software, cloud, and AI engineering."
-    />
-    <title>Gladwin Benjamin | Portfolio</title>
-    <style>
-      :root {
-        color-scheme: light;
-        --background: #f5f7fb;
-        --surface: #ffffff;
-        --text: #172033;
-        --muted: #5d687c;
-        --accent: #4f46e5;
-        --accent-dark: #3730a3;
-        --border: #e3e7ef;
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      body {
-        margin: 0;
-        font-family:
-          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
-          "Segoe UI", sans-serif;
-        color: var(--text);
-        background: var(--background);
-        line-height: 1.6;
-      }
-
-      a {
-        color: inherit;
-      }
-
-      .container {
-        width: min(100% - 2rem, 960px);
-        margin: 0 auto;
-      }
-
-      header {
-        padding: 1.25rem 0;
-        border-bottom: 1px solid var(--border);
-        background: var(--surface);
-      }
-
-      nav {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 1rem;
-      }
-
-      .logo {
-        font-weight: 800;
-        text-decoration: none;
-        letter-spacing: -0.03em;
-      }
-
-      nav ul {
-        display: flex;
-        gap: 1rem;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        color: var(--muted);
-      }
-
-      nav a {
-        text-decoration: none;
-      }
-
-      nav a:hover,
-      nav a:focus-visible {
-        color: var(--accent);
-      }
-
-      .hero {
-        display: grid;
-        min-height: 72vh;
-        align-items: center;
-        padding: 5rem 0;
-      }
-
-      .eyebrow {
-        margin: 0 0 0.75rem;
-        color: var(--accent);
-        font-size: 0.85rem;
-        font-weight: 800;
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-      }
-
-      h1,
-      h2 {
-        margin-top: 0;
-        line-height: 1.1;
-        letter-spacing: -0.04em;
-      }
-
-      h1 {
-        max-width: 700px;
-        margin-bottom: 1.25rem;
-        font-size: clamp(2.75rem, 8vw, 5.5rem);
-      }
-
-      .hero p {
-        max-width: 600px;
-        margin-bottom: 2rem;
-        color: var(--muted);
-        font-size: 1.15rem;
-      }
-
-      .button {
-        display: inline-block;
-        padding: 0.8rem 1.2rem;
-        border-radius: 0.6rem;
-        color: #fff;
-        background: var(--accent);
-        font-weight: 700;
-        text-decoration: none;
-      }
-
-      .button:hover,
-      .button:focus-visible {
-        background: var(--accent-dark);
-      }
-
-      section {
-        padding: 4rem 0;
-      }
-
-      .section-heading {
-        margin-bottom: 1.5rem;
-        font-size: 2rem;
-      }
-
-      .cards {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1rem;
-      }
-
-      .cards-wide {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .card {
-        padding: 1.5rem;
-        border: 1px solid var(--border);
-        border-radius: 0.8rem;
-        background: var(--surface);
-      }
-
-      .card h3 {
-        margin-top: 0;
-        margin-bottom: 0.5rem;
-      }
-
-      .card p {
-        margin: 0;
-        color: var(--muted);
-      }
-
-      .card h4 {
-        margin: 1rem 0 0.25rem;
-      }
-
-      .card h4:first-child {
-        margin-top: 0;
-      }
-
-      .tags {
-        margin-top: 1rem !important;
-        color: var(--accent) !important;
-        font-size: 0.9rem;
-        font-weight: 700;
-      }
-
-      .card a {
-        display: inline-block;
-        margin-top: 1rem;
-        color: var(--accent);
-        font-weight: 700;
-        text-decoration: none;
-      }
-
-      .card a:hover,
-      .card a:focus-visible {
-        color: var(--accent-dark);
-        text-decoration: underline;
-      }
-
-      .contact {
-        margin-bottom: 4rem;
-        padding: 2rem;
-        border-radius: 0.8rem;
-        color: #fff;
-        background: var(--text);
-      }
-
-      .contact h2 {
-        margin-bottom: 0.75rem;
-      }
-
-      .contact p {
-        margin: 0 0 1rem;
-        color: #c6ccda;
-      }
-
-      footer {
-        padding: 1.5rem 0;
-        border-top: 1px solid var(--border);
-        color: var(--muted);
-        font-size: 0.9rem;
-        text-align: center;
-      }
-
-      @media (max-width: 700px) {
-        nav ul {
-          gap: 0.65rem;
-          font-size: 0.9rem;
-        }
-
-        .hero {
-          min-height: auto;
-          padding: 5rem 0 4rem;
-        }
-
-        .cards {
-          grid-template-columns: 1fr;
-        }
-
-        .cards-wide {
-          grid-template-columns: 1fr;
-        }
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <div class="container">
-        <nav aria-label="Primary navigation">
-          <a class="logo" href="#">Gladwin Benjamin</a>
-          <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#work">Work</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </nav>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Gladwin Benjamin, final-year B.Tech Computer Science student at SRMIST. AI engineering, full-stack development, cloud, and process mining. Incident Triage Agent, Renault hybrid LLM diagnostics, SkillBridge, and WoodCorp Celonis." />
+<meta property="og:title" content="Gladwin Benjamin | Portfolio" />
+<meta property="og:description" content="Software, cloud, and AI engineering. Final-year B.Tech CSE (Software Engineering) at SRMIST, CGPA 9.27." />
+<title>Gladwin Benjamin | Software, Cloud, and AI Engineering</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --radius:16px;
+  --max:1080px;
+  --font-body:"Inter",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --font-display:"Space Grotesk","Inter",ui-sans-serif,system-ui,sans-serif;
+}
+html[data-theme="dark"]{
+  color-scheme:dark;
+  --bg:#0b0f17; --bg-soft:#0f1522; --surface:#131a29; --surface-2:#1a2336;
+  --text:#eef1f7; --muted:#9aa6bc; --border:#26314a;
+  --accent:#ffd60a; --accent-ink:#161616; --accent-soft:rgba(255,214,10,.12);
+  --link:#ffd60a; --shadow:0 18px 40px rgba(0,0,0,.35);
+}
+html[data-theme="light"]{
+  color-scheme:light;
+  --bg:#f7f5ee; --bg-soft:#fffdf6; --surface:#ffffff; --surface-2:#f1eee3;
+  --text:#161616; --muted:#5b5b52; --border:#161616;
+  --accent:#facc00; --accent-ink:#161616; --accent-soft:rgba(250,204,0,.35);
+  --link:#161616; --shadow:6px 6px 0 #161616;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{margin:0;font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+::selection{background:var(--accent);color:var(--accent-ink)}
+.skip{position:absolute;left:-999px;top:0;background:var(--accent);color:var(--accent-ink);padding:.6rem 1rem;font-weight:700;z-index:99}
+.skip:focus{left:1rem;top:1rem}
+.container{width:min(100% - 2.5rem,var(--max));margin:0 auto}
+header.site{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+html[data-theme="light"] header.site{border-bottom:2px solid var(--border)}
+nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.9rem 0}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;font-family:var(--font-display);font-weight:700;letter-spacing:-.02em;font-size:1.05rem}
+.monogram{display:grid;place-items:center;width:38px;height:38px;border-radius:10px;background:var(--accent);color:var(--accent-ink);font-weight:700;font-size:.95rem}
+html[data-theme="light"] .monogram{border:2px solid #161616;box-shadow:2px 2px 0 #161616}
+.nav-links{display:flex;gap:1.4rem;list-style:none;margin:0;padding:0;color:var(--muted);font-size:.95rem;font-weight:500}
+.nav-links a{text-decoration:none}
+.nav-links a:hover{color:var(--text)}
+.nav-actions{display:flex;gap:.5rem;align-items:center}
+.theme-btn,.icon-btn{cursor:pointer;border:1px solid var(--border);background:var(--surface);color:var(--text);border-radius:999px;padding:.45rem .85rem;font:inherit;font-size:.85rem;font-weight:600}
+.theme-btn:hover{border-color:var(--accent)}
+.btn{display:inline-flex;align-items:center;gap:.45rem;padding:.8rem 1.25rem;border-radius:999px;text-decoration:none;font-weight:700;font-size:.95rem;border:1px solid transparent;transition:transform .15s ease,box-shadow .15s ease}
+.btn:hover{transform:translateY(-1px)}
+.btn-primary{background:var(--accent);color:var(--accent-ink)}
+html[data-theme="light"] .btn-primary{border:2px solid #161616;box-shadow:3px 3px 0 #161616}
+.btn-ghost{border-color:var(--border);background:var(--surface);color:var(--text)}
+.btn-sm{padding:.55rem .95rem;font-size:.85rem}
+.hero{padding:4.5rem 0 3rem}
+.eyebrow{margin:0 0 .9rem;color:var(--muted);font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.eyebrow .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#22c55e;margin-right:.5rem;vertical-align:middle}
+h1,h2,h3{font-family:var(--font-display);line-height:1.08;letter-spacing:-.03em;margin-top:0}
+h1{font-size:clamp(2.6rem,7.5vw,4.9rem);margin-bottom:1.1rem;max-width:16ch}
+h1 .hl{background:var(--accent);color:var(--accent-ink);padding:0 .18em;border-radius:.12em;white-space:nowrap}
+.hero p.lead{max-width:62ch;color:var(--muted);font-size:1.12rem;margin:0 0 1.6rem}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-bottom:2.2rem}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;list-style:none;margin:0;padding:0}
+.stat{border:1px solid var(--border);background:var(--surface);border-radius:var(--radius);padding:1rem 1.1rem}
+html[data-theme="light"] .stat{border:2px solid #161616;box-shadow:4px 4px 0 #161616}
+.stat b{display:block;font-family:var(--font-display);font-size:1.45rem;letter-spacing:-.02em}
+.stat span{color:var(--muted);font-size:.85rem}
+section{padding:3.2rem 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:1rem;margin-bottom:1.4rem;flex-wrap:wrap}
+.section-head h2{font-size:clamp(1.6rem,3.5vw,2.2rem);margin:0}
+.section-head p{margin:.4rem 0 0;color:var(--muted);max-width:62ch}
+.kicker{margin:0 0 .5rem;color:var(--muted);font-size:.82rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.featured{border:1px solid var(--border);background:linear-gradient(135deg,var(--surface),var(--surface-2));border-radius:20px;padding:1.8rem;box-shadow:var(--shadow);display:grid;grid-template-columns:1.15fr .85fr;gap:1.8rem}
+html[data-theme="light"] .featured{border:2px solid #161616}
+.featured h3{font-size:clamp(1.5rem,3vw,2rem);margin-bottom:.6rem}
+.featured p{color:var(--muted);margin-top:0}
+.badge{display:inline-block;background:var(--accent);color:var(--accent-ink);font-size:.75rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .6rem;border-radius:999px;margin-bottom:.8rem}
+.checks{list-style:none;margin:1rem 0 0;padding:0;display:grid;gap:.45rem;color:var(--muted);font-size:.95rem}
+.checks li::before{content:"✓ ";color:var(--text);font-weight:800}
+.featured-side{border:1px solid var(--border);border-radius:14px;padding:1.2rem;background:var(--bg-soft)}
+.featured-side h4{margin:0 0 .7rem;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.flow{list-style:none;margin:0;padding:0;display:grid;gap:.55rem;font-size:.95rem}
+.flow li{display:flex;gap:.6rem;align-items:baseline}
+.flow b{font-family:var(--font-display);background:var(--accent);color:var(--accent-ink);border-radius:50%;width:22px;height:22px;display:inline-grid;place-items:center;font-size:.8rem;flex:none;transform:translateY(3px)}
+.filters{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.3rem}
+.filter-btn{cursor:pointer;border:1px solid var(--border);background:var(--surface);color:var(--muted);border-radius:999px;padding:.5rem 1rem;font:inherit;font-size:.88rem;font-weight:600}
+.filter-btn[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+html[data-theme="light"] .filter-btn[aria-pressed="true"]{border-color:#161616}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.card{border:1px solid var(--border);background:var(--surface);border-radius:var(--radius);padding:1.4rem;display:flex;flex-direction:column;transition:transform .15s ease,border-color .15s ease}
+.card:hover{transform:translateY(-3px);border-color:var(--accent)}
+html[data-theme="light"] .card{border:2px solid #161616;box-shadow:4px 4px 0 #161616}
+.card h3{font-size:1.2rem;margin-bottom:.5rem}
+.card p{color:var(--muted);margin:0 0 .9rem;font-size:.96rem;flex:1}
+.card .meta{color:var(--muted);font-size:.82rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.5rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem;list-style:none;margin:0 0 1rem;padding:0}
+.tags li{font-size:.78rem;font-weight:600;border:1px solid var(--border);border-radius:999px;padding:.25rem .6rem;color:var(--muted);background:var(--bg-soft)}
+.card-links{display:flex;flex-wrap:wrap;gap:.5rem}
+.card-links a{font-weight:700;font-size:.9rem;text-decoration:none;border-bottom:2px solid var(--accent);padding-bottom:1px}
+.card-links a:hover{color:var(--link)}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.panel{border:1px solid var(--border);background:var(--surface);border-radius:var(--radius);padding:1.5rem}
+html[data-theme="light"] .panel{border:2px solid #161616;box-shadow:4px 4px 0 #161616}
+.panel h3{font-size:1.25rem;margin-bottom:.8rem}
+.achieve{list-style:none;margin:0;padding:0;display:grid;gap:1rem}
+.achieve li{display:grid;grid-template-columns:auto 1fr;gap:.9rem;align-items:start}
+.achieve .yr{font-family:var(--font-display);font-weight:700;background:var(--accent-soft);border:1px solid var(--border);border-radius:10px;padding:.35rem .6rem;font-size:.85rem;white-space:nowrap}
+.achieve b{display:block}
+.achieve span{color:var(--muted);font-size:.93rem}
+.edu{list-style:none;margin:0;padding:0;display:grid;gap:1rem}
+.edu b{display:block}
+.edu span{color:var(--muted);font-size:.93rem}
+.cert{list-style:none;margin:0;padding:0;display:grid;gap:.6rem}
+.cert li{display:flex;justify-content:space-between;gap:1rem;border-bottom:1px dashed var(--border);padding-bottom:.6rem}
+.cert li:last-child{border-bottom:0;padding-bottom:0}
+.cert span{color:var(--muted);font-size:.9rem;white-space:nowrap}
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+.skill-group h3{font-size:1.05rem;margin-bottom:.7rem}
+.skill-group ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.4rem}
+.skill-group li{font-size:.85rem;font-weight:600;border:1px solid var(--border);border-radius:999px;padding:.3rem .65rem;background:var(--bg-soft)}
+.note{border:1px dashed var(--border);border-radius:var(--radius);padding:1.1rem 1.3rem;color:var(--muted);font-size:.95rem;margin-top:1rem}
+.note b{color:var(--text)}
+.contact-box{border-radius:20px;background:var(--text);color:var(--bg);padding:2.2rem;box-shadow:var(--shadow)}
+html[data-theme="light"] .contact-box{border:2px solid #161616}
+.contact-box h2{font-size:clamp(1.7rem,4vw,2.4rem);margin-bottom:.6rem}
+.contact-box p{opacity:.75;margin:0 0 1.4rem;max-width:60ch}
+.contact-box .btn-primary{background:var(--accent);color:var(--accent-ink)}
+.contact-box .btn-ghost{background:transparent;border-color:rgba(128,128,128,.5);color:inherit}
+.contact-lines{display:flex;flex-wrap:wrap;gap:1.2rem;margin-bottom:1.4rem;font-weight:600}
+.contact-lines a{text-decoration:none;border-bottom:2px solid var(--accent)}
+footer{padding:1.6rem 0 2.2rem;border-top:1px solid var(--border);color:var(--muted);font-size:.9rem}
+footer .container{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(10px);transition:opacity .5s ease,transform .5s ease}
+.reveal.visible{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}html{scroll-behavior:auto}}
+@media (max-width:860px){
+  .cards,.skills-grid{grid-template-columns:1fr 1fr}
+  .featured{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr}
+  .two-col{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  .nav-links{display:none}
+  .cards,.skills-grid,.stats{grid-template-columns:1fr}
+  .hero{padding-top:3rem}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#work">Skip to projects</a>
+<header class="site">
+  <div class="container">
+    <nav aria-label="Primary">
+      <a class="brand" href="#top"><span class="monogram" aria-hidden="true">GB</span> Gladwin Benjamin</a>
+      <ul class="nav-links">
+        <li><a href="#work">Projects</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-btn" id="themeToggle" type="button" aria-label="Toggle light and dark theme">Light mode</button>
+        <a class="btn btn-primary btn-sm" href="https://github.com/ayerna" target="_blank" rel="noreferrer">GitHub</a>
       </div>
-    </header>
+    </nav>
+  </div>
+</header>
+<main id="top">
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow"><span class="dot" aria-hidden="true"></span> Open to internships and entry-level roles, graduating 2027</p>
+      <h1>Software, cloud, and <span class="hl">AI engineering</span> that holds up under checks.</h1>
+      <p class="lead">I am Gladwin Benjamin, a final-year B.Tech Computer Science and Engineering student (Software Engineering) at SRMIST. I build AI features, full-stack applications, and cloud systems, and I verify them against written expected results before I call them done: rule checks behind LLM output, API and browser tests, and static analysis.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#work">See my work</a>
+        <a class="btn btn-ghost" href="mailto:gb5608@srmist.edu.in">gb5608@srmist.edu.in</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/gladwinbenjamin/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <button class="btn btn-ghost" id="copyEmail" type="button">Copy email</button>
+      </div>
+      <ul class="stats" aria-label="Highlights">
+        <li class="stat"><b>9.27 / 10</b><span>CGPA, B.Tech CSE (Software Engineering)</span></li>
+        <li class="stat"><b>Rank 1</b><span>AWS Jam Journey, Cloud Security, Oct 2026</span></li>
+        <li class="stat"><b>38 / 38</b><span>pytest passing, Incident Triage Agent</span></li>
+        <li class="stat"><b>19,953</b><span>orders analysed, WoodCorp Celonis project</span></li>
+      </ul>
+    </div>
+  </section>
 
-    <main>
-      <section class="hero">
-        <div class="container">
-          <p class="eyebrow">Welcome to my portfolio</p>
-          <h1>Software, cloud, and AI engineering.</h1>
-          <p>
-            I’m Gladwin Benjamin, a final-year B.Tech Computer Science student
-            at SRM IST focused on building efficient, reliable, and
-            intelligent software.
-          </p>
-          <a class="button" href="#work">See my work</a>
+  <section id="work" aria-label="Projects">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <p class="kicker">Featured project</p>
+          <h2>Newest: an agent that proposes, checks verify, a human decides.</h2>
         </div>
-      </section>
-
-      <section id="about">
-        <div class="container">
-          <p class="eyebrow">A little about me</p>
-          <h2 class="section-heading">Building useful systems from first principles.</h2>
-          <p>
-            Final-year B.Tech Computer Science student with hands-on experience
-            across software development, AI/ML, and cloud engineering. Skilled
-            in C++ and Python, with experience building LLM-based applications
-            and AWS infrastructure using Docker, Kubernetes, and Terraform.
-            I enjoy solving complex problems with strong foundations in data
-            structures, algorithms, REST APIs, Linux, and CI/CD.
-          </p>
-          <div class="cards cards-wide" style="margin-top: 1.5rem;">
-            <article class="card">
-              <h3>Education</h3>
-              <h4>B.Tech, Computer Science and Engineering – Software Engineering</h4>
-              <p>SRM IST-Kattankulathur · Expected 2027 · CGPA 9.27/10</p>
-              <h4>Class XII · CBSE</h4>
-              <p>Rhema International School, Punjab · 83%</p>
-              <h4>Class X · CBSE</h4>
-              <p>Rhema International School, Punjab · 75.2%</p>
-            </article>
-            <article class="card">
-              <h3>Certifications</h3>
-              <p>AWS Certified Developer – Associate</p>
-              <p>AWS Certified Cloud Practitioner</p>
-              <p>AWS Certified AI Practitioner</p>
-              <h4>Activities</h4>
-              <p>
-                CINTEL Student Association — Event Management Team. Organized
-                3+ hackathons and technical events with 200+ participants.
-              </p>
-            </article>
+      </div>
+      <article class="featured reveal">
+        <div>
+          <span class="badge">Latest, Nov 2026</span>
+          <h3>Incident Triage Agent with Human Approval</h3>
+          <p>An end-to-end triage agent for synthetic vessel and equipment maintenance incidents. The agent searches past incidents, drafts a structured triage proposal, and a deterministic rule check plus an LLM critic verify it before a human approves or rejects it in the UI. Zero auto-approval: every decision is stored with the proposal, so every decision is auditable.</p>
+          <ul class="checks">
+            <li>Real function calling: tool definitions sent to Groq (gpt-oss-20b), results fed back into the loop</li>
+            <li>Framework-free agent loop plus a LangGraph version of the same loop</li>
+            <li>38/38 pytest passing, including a live Groq test and a transaction rollback test; 1/1 Playwright end-to-end flow</li>
+            <li>PostgreSQL with a single JOIN list query, Alembic migrations, JWT sign-in, feature branches merged on GitHub</li>
+          </ul>
+          <div class="card-links" style="margin-top:1.2rem">
+            <a href="https://github.com/ayerna/triage-agent" target="_blank" rel="noreferrer">View source code</a>
           </div>
+          <ul class="tags" style="margin-top:1rem">
+            <li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>Groq</li><li>LangGraph</li><li>React</li><li>TypeScript</li><li>pytest</li><li>Playwright</li><li>Docker</li>
+          </ul>
         </div>
-      </section>
+        <aside class="featured-side" aria-label="How triage works">
+          <h4>How it works</h4>
+          <ol class="flow">
+            <li><b>1</b><span>File an incident, stored as Open.</span></li>
+            <li><b>2</b><span>Run Triage: the agent searches past incidents and reads the best matches.</span></li>
+            <li><b>3</b><span>Proposal validated as JSON, then rule-checked (safety incidents are at least High) and critic-reviewed.</span></li>
+            <li><b>4</b><span>A human approves or rejects. Decision and status change land in one transaction.</span></li>
+          </ol>
+          <p style="color:var(--muted);font-size:.88rem;margin:1rem 0 0">All 15 seed incidents are synthetic demo data, labelled as synthetic in the repo. No real company data.</p>
+        </aside>
+      </article>
 
-      <section id="work">
-        <div class="container">
-          <p class="eyebrow">Selected work</p>
-          <h2 class="section-heading">Projects with practical impact.</h2>
-          <div class="cards">
-            <article class="card">
-              <h3>SkillBridge</h3>
-              <p>
-                A peer-to-peer skill exchange platform for students, built with
-                Next.js, Firebase, and SendGrid. Students can offer and request
-                skills, connect through messaging, and manage their profiles.
-              </p>
-              <a href="https://skbridgesrm.vercel.app/" target="_blank" rel="noreferrer">
-                View live project
-              </a>
-              <a href="https://github.com/ayerna/SkillBridge" target="_blank" rel="noreferrer">
-                View source code
-              </a>
-              <p class="tags">React.js · Node.js · REST APIs · Agile/Scrum</p>
-            </article>
-            <article class="card">
-              <h3>Hybrid LLM Framework for Vehicle Diagnostics</h3>
-              <p>
-                A real-time EV battery management system AI pipeline that
-                streams telemetry, builds a temporal knowledge base, and
-                answers driver questions with a local LLM or expert fallback.
-              </p>
-              <a href="https://github.com/ayerna/RNTBCI-POC-5-demo" target="_blank" rel="noreferrer">
-                View source code
-              </a>
-              <p class="tags">Python · Pandas · Ollama · LLMs</p>
-            </article>
-            <article class="card">
-              <h3>Diabetes Risk Predictor</h3>
-              <p>
-                A Streamlit machine-learning app that predicts diabetes risk
-                from health indicators with logistic regression and explains
-                each prediction using SHAP visualizations.
-              </p>
-              <a href="https://diabetes-risk-predictor-ayerna.streamlit.app/" target="_blank" rel="noreferrer">
-                View live project
-              </a>
-              <a href="https://github.com/ayerna/Diabetes-Risk-Predictor" target="_blank" rel="noreferrer">
-                View source code
-              </a>
-              <p class="tags">Python · Streamlit · scikit-learn · SHAP</p>
-            </article>
-            <article class="card">
-              <h3>YouTube Downloader</h3>
-              <p>
-                A Python and Tkinter desktop app for downloading authorized
-                YouTube videos as MP4 or audio as MP3, with selectable quality,
-                progress tracking, and configurable download folders.
-              </p>
-              <a href="https://github.com/ayerna/YouTubeDownloader" target="_blank" rel="noreferrer">
-                View source code
-              </a>
-              <p class="tags">Python · Tkinter · yt-dlp · FFmpeg</p>
-            </article>
-            <article class="card">
-              <h3>Self-Healing Cloud Infrastructure</h3>
-              <p>
-                A cloud engineering solution that detects infrastructure
-                failures and restores affected services automatically, reducing
-                manual intervention and improving operational resilience.
-              </p>
-              <p class="tags">AWS · Terraform · Python · Linux · Docker</p>
-            </article>
+      <div class="section-head reveal" style="margin-top:3rem">
+        <div>
+          <p class="kicker">Selected work</p>
+          <h2>Projects with practical impact.</h2>
+          <p>Filter by area. Every number below comes from a run, a report, or a verified analysis, not an estimate.</p>
+        </div>
+      </div>
+      <div class="filters reveal" role="group" aria-label="Filter projects">
+        <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All</button>
+        <button class="filter-btn" type="button" data-filter="ai" aria-pressed="false">AI / ML</button>
+        <button class="filter-btn" type="button" data-filter="fullstack" aria-pressed="false">Full-stack</button>
+        <button class="filter-btn" type="button" data-filter="cloud" aria-pressed="false">Cloud / DevOps</button>
+        <button class="filter-btn" type="button" data-filter="data" aria-pressed="false">Data / Process mining</button>
+      </div>
+      <div class="cards" id="projectGrid">
+        <article class="card reveal" data-category="ai data">
+          <p class="meta">Industry project, RNTBCI, with research paper draft</p>
+          <h3>Hybrid LLM Framework for Vehicle Diagnostics</h3>
+          <p>AI diagnostics for EV battery telemetry: a sliding-window pipeline turns sensor streams into structured JSON knowledge entries, deterministic rules check severity, and a local LLM explains each finding. Rule-engine check: 9/9 cases. Built with Mayank Raj and Sarvesh Sathyanarayanan.</p>
+          <ul class="tags"><li>Python</li><li>Pandas</li><li>Ollama</li><li>LLMs</li></ul>
+          <div class="card-links"><a href="https://github.com/ayerna/RNTBCI-POC-5-demo" target="_blank" rel="noreferrer">View source code</a></div>
+        </article>
+        <article class="card reveal" data-category="fullstack ai">
+          <p class="meta">Full-stack platform, team of 3</p>
+          <h3>SkillBridge</h3>
+          <p>Peer-to-peer skill exchange for students: offer and request skills, messaging, profiles, and an admin dashboard with analytics. Firebase Auth and Firestore, SendGrid OTP verification. Verified with Vitest 70/70, a 16-request Postman collection (22 assertions), and a 14/14 Playwright suite with request guards.</p>
+          <ul class="tags"><li>Next.js</li><li>React</li><li>Node.js</li><li>Firebase</li><li>SendGrid</li></ul>
+          <div class="card-links">
+            <a href="https://skbridgesrm.vercel.app/" target="_blank" rel="noreferrer">View live project</a>
+            <a href="https://github.com/ayerna/SkillBridge" target="_blank" rel="noreferrer">View source code</a>
           </div>
-        </div>
-      </section>
-
-      <section id="skills">
-        <div class="container">
-          <p class="eyebrow">What I work with</p>
-          <h2 class="section-heading">Skills and interests.</h2>
-          <div class="cards cards-wide">
-            <article class="card">
-              <h3>Programming and tools</h3>
-              <p>
-                Python · C++ · SQL · Bash · AWS · Docker · Kubernetes ·
-                Terraform · Git · GitHub · Jenkins · Linux
-              </p>
-            </article>
-            <article class="card">
-              <h3>Engineering strengths</h3>
-              <p>
-                Data Structures &amp; Algorithms · OOP · REST APIs · DBMS ·
-                CI/CD · Software Testing · Distributed Systems · LLMs · Agile
-                · Scrum · AI Engineering
-              </p>
-            </article>
+        </article>
+        <article class="card reveal" data-category="data ai">
+          <p class="meta">Major project, Celonis, guide Dr G Senthil Kumar</p>
+          <h3>WoodCorp Order-to-Cash Process Mining</h3>
+          <p>Process mining of 19,953 orders in Celonis: mapped the real Order-to-Cash flow, found 64% on-time delivery against an 80% target, quantified 11.82M euros in annual late-delivery cost, and built a business case showing 5.17M euros recoverable. Root cause: a 33-day pre-production wait and systematic overpromising.</p>
+          <ul class="tags"><li>Celonis</li><li>PQL</li><li>Process Mining</li><li>Knowledge Models</li></ul>
+        </article>
+        <article class="card reveal" data-category="ai">
+          <p class="meta">Vision language models, document verification</p>
+          <h3>KYC Document Verification using Vision Language Models</h3>
+          <p>Fine-tuned LayoutLMv3 with LoRA to extract, validate, and structure data from Aadhaar, PAN, and passports. Multimodal pipeline of image preprocessing, OCR validation, and structured extraction, tested on noisy low-resolution document images and evaluated on field-level accuracy, confidence, and latency. Streamlit app for real-time verification.</p>
+          <ul class="tags"><li>Python</li><li>PyTorch</li><li>Hugging Face</li><li>LoRA</li><li>OpenCV</li><li>Streamlit</li></ul>
+        </article>
+        <article class="card reveal" data-category="ai">
+          <p class="meta">Machine learning, explainable predictions</p>
+          <h3>Diabetes Risk Predictor</h3>
+          <p>A Streamlit app that predicts diabetes risk from health indicators with logistic regression and explains each prediction with SHAP visualisations.</p>
+          <ul class="tags"><li>Python</li><li>Streamlit</li><li>scikit-learn</li><li>SHAP</li></ul>
+          <div class="card-links">
+            <a href="https://diabetes-risk-predictor-ayerna.streamlit.app/" target="_blank" rel="noreferrer">View live project</a>
+            <a href="https://github.com/ayerna/Diabetes-Risk-Predictor" target="_blank" rel="noreferrer">View source code</a>
           </div>
-        </div>
-      </section>
+        </article>
+        <article class="card reveal" data-category="cloud">
+          <p class="meta">Cloud infrastructure, AWS</p>
+          <h3>Self-Healing Cloud Infrastructure</h3>
+          <p>Detects infrastructure failures and restores affected services automatically, reducing manual intervention and improving operational resilience.</p>
+          <ul class="tags"><li>AWS</li><li>Terraform</li><li>Python</li><li>Linux</li><li>Docker</li></ul>
+        </article>
+        <article class="card reveal" data-category="cloud fullstack">
+          <p class="meta">DevOps pipeline, AWS</p>
+          <h3>Multi-Tenant DevOps Pipeline</h3>
+          <p>Containerised delivery on AWS: images built and pushed through ECR, deployed to Kubernetes, with Jenkins automation and Terraform-managed infrastructure.</p>
+          <ul class="tags"><li>AWS</li><li>Kubernetes</li><li>Terraform</li><li>Jenkins</li><li>ECR</li><li>Docker</li></ul>
+        </article>
+        <article class="card reveal" data-category="fullstack">
+          <p class="meta">AI-assisted lesson authoring, QC built in</p>
+          <h3>Lesson Creation Tool</h3>
+          <p>Builds 45-minute lessons from a title and objective, with two QC layers (factual accuracy, instructional quality) and instructor review, edit, and export. Both sample lessons (HTTP, SQL JOINs) run exactly 45 minutes.</p>
+          <ul class="tags"><li>JavaScript</li><li>Instructional Design</li><li>Quality Checks</li></ul>
+        </article>
+        <article class="card reveal" data-category="fullstack">
+          <p class="meta">Real-time multiplayer game</p>
+          <h3>Ameesha Battle</h3>
+          <p>Browser-based 2-player real-time 2D fighting game where answering trivia questions triggers attacks. Private rooms with join codes, Firebase multiplayer sync, persistent profiles and leaderboards.</p>
+          <ul class="tags"><li>JavaScript</li><li>Firebase</li><li>Real-time Multiplayer</li></ul>
+        </article>
+        <article class="card reveal" data-category="fullstack">
+          <p class="meta">Testing, same codebase, three tools</p>
+          <h3>SkillBridge Testing: Vitest, Postman, Playwright</h3>
+          <p>One platform verified three ways: 70-case Vitest suite (all passing), Postman API testing of the send-OTP route (16 requests, 22 assertions on JSON and 200/400/500 codes), and a 14-test Playwright suite (14/14 in 7.9s) with guards blocking any OTP, sign-in, or database write. SonarQube static analysis: 22 open issues triaged, Security A, Maintainability A.</p>
+          <ul class="tags"><li>Vitest</li><li>Postman</li><li>Playwright</li><li>SonarQube</li></ul>
+        </article>
+        <article class="card reveal" data-category="ai">
+          <p class="meta">Desktop utility</p>
+          <h3>YouTube Downloader</h3>
+          <p>A Python and Tkinter desktop app for downloading authorised YouTube videos as MP4 or audio as MP3, with selectable quality, progress tracking, and configurable download folders.</p>
+          <ul class="tags"><li>Python</li><li>Tkinter</li><li>yt-dlp</li><li>FFmpeg</li></ul>
+          <div class="card-links"><a href="https://github.com/ayerna/YouTubeDownloader" target="_blank" rel="noreferrer">View source code</a></div>
+        </article>
+      </div>
+      <p class="note reveal"><b>Research:</b> co-author of a 6-page IEEE-format draft paper on the Renault hybrid LLM diagnostics work, with Mayank Raj and Sarvesh Sathyanarayanan. Draft stage, not yet submitted to a venue.</p>
+    </div>
+  </section>
 
-      <section id="contact">
-        <div class="container">
-          <div class="contact">
-            <h2>Let’s build something reliable.</h2>
-            <p>
-              Open to conversations about software engineering, cloud
-              infrastructure, AI/ML, and meaningful project opportunities.
-            </p>
-            <p>
-              gb5608@srmist.edu.in · 7814861743
-            </p>
-            <p>Chengalpattu, Tamil Nadu · B.Tech expected 2027</p>
-            <a class="button" href="mailto:gb5608@srmist.edu.in">Get in touch</a>
-            <a class="button" href="https://github.com/ayerna" target="_blank" rel="noreferrer">
-              GitHub
-            </a>
-          </div>
+  <section id="achievements" aria-label="Achievements">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <p class="kicker">Achievements</p>
+          <h2>Results that were earned, not claimed.</h2>
         </div>
-      </section>
-    </main>
+      </div>
+      <div class="two-col">
+        <div class="panel reveal">
+          <h3>Achievements</h3>
+          <ul class="achieve">
+            <li><span class="yr">Oct 2026</span><div><b>Rank 1, AWS Jam Journey on Cloud Security</b><span>SRMIST School of Computing. Hands-on cloud security challenge with AWS resource persons.</span></div></li>
+            <li><span class="yr">Sep 2026</span><div><b>National Semi-Finalist, Flipkart GRiD 8.0, Prompt the Future</b><span>Certificate of Achievement, SRM Chennai. Reached the semi-finals through the exam stages.</span></div></li>
+            <li><span class="yr">2025</span><div><b>98/100, SAP S/4HANA ERP course, top performer</b><span>Introduction to ERP using GBI 3.30 on SAP S/4HANA, SAP University Alliances. Certificate received in person.</span></div></li>
+            <li><span class="yr">2025</span><div><b>CINTEL Student Association, Event Management Team</b><span>Organised 3+ hackathons and technical events with 200+ participants since Jan 2025.</span></div></li>
+          </ul>
+        </div>
+        <div class="panel reveal">
+          <h3>Certifications</h3>
+          <ul class="cert">
+            <li><b>AWS Certified Developer, Associate</b><span>Apr 2026</span></li>
+            <li><b>AWS Certified AI Practitioner</b><span>Nov 2025</span></li>
+            <li><b>AWS Certified Cloud Practitioner</b><span>Sep 2025</span></li>
+            <li><b>Celonis Process Intelligence Rising Star, Business</b><span>Sep 2026</span></li>
+            <li><b>SAP Generative AI Developer</b><span>Feb 2026</span></li>
+            <li><b>Introduction to ERP using GBI 3.30 on SAP S/4HANA</b><span>Jan-May 2025</span></li>
+          </ul>
+          <p style="color:var(--muted);font-size:.9rem;margin:1rem 0 0">SAP S/4HANA work is coursework exposure through the university elective, not production ERP implementation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-      <div class="container">© 2026 Gladwin Benjamin. Built with HTML and CSS.</div>
-    </footer>
-  </body>
+  <section id="skills" aria-label="Skills">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <p class="kicker">What I work with</p>
+          <h2>Skills, only what I have actually used.</h2>
+        </div>
+      </div>
+      <div class="skills-grid">
+        <div class="panel skill-group reveal">
+          <h3>Languages and data</h3>
+          <ul><li>C++</li><li>Python</li><li>SQL</li><li>JavaScript</li><li>TypeScript</li><li>Bash</li><li>PostgreSQL</li><li>MySQL</li><li>MongoDB</li><li>Pandas</li></ul>
+        </div>
+        <div class="panel skill-group reveal">
+          <h3>AI and ML</h3>
+          <ul><li>LLMs</li><li>Ollama</li><li>Groq API</li><li>LangGraph</li><li>Function calling</li><li>Prompt engineering</li><li>Model evaluation</li><li>PyTorch</li><li>Hugging Face</li><li>LoRA</li><li>scikit-learn</li><li>SHAP</li><li>OpenCV</li></ul>
+        </div>
+        <div class="panel skill-group reveal">
+          <h3>Web, cloud, and testing</h3>
+          <ul><li>React</li><li>Next.js</li><li>Node.js</li><li>Express.js</li><li>FastAPI</li><li>REST APIs</li><li>Firebase</li><li>AWS</li><li>Docker</li><li>Kubernetes</li><li>Terraform</li><li>Jenkins</li><li>Git</li><li>GitHub</li><li>Linux</li><li>pytest</li><li>Vitest</li><li>Postman</li><li>Playwright</li><li>Celonis</li><li>PQL</li></ul>
+        </div>
+      </div>
+      <div class="two-col" style="margin-top:1rem">
+        <div class="panel reveal">
+          <h3>How I work</h3>
+          <p style="color:var(--muted);margin:0">Data structures and algorithms, OOP, DBMS, CI/CD, SDLC, Agile and Scrum, software testing, and distributed systems. Strongest language: C++, then Python. I write the expected result first, then check the actual result against it.</p>
+        </div>
+        <div class="panel reveal">
+          <h3>Languages</h3>
+          <p style="color:var(--muted);margin:0">English and Hindi, fluent. Punjabi, understand and write. Malayalam, speak. Born in Kanpur, parents from Kerala, schooled in Punjab.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" aria-label="Education and about">
+    <div class="container">
+      <div class="section-head reveal">
+        <div>
+          <p class="kicker">About</p>
+          <h2>Building useful systems from first principles.</h2>
+        </div>
+      </div>
+      <div class="two-col">
+        <div class="panel reveal">
+          <h3>Education</h3>
+          <ul class="edu">
+            <li><b>B.Tech, Computer Science and Engineering, Software Engineering</b><span>SRMIST, Kattankulathur. Expected 2027. CGPA 9.27/10.</span></li>
+            <li><b>Class XII, CBSE</b><span>Rhema International School, Punjab. 83%.</span></li>
+            <li><b>Class X, CBSE</b><span>Rhema International School, Punjab. 75.2%.</span></li>
+          </ul>
+        </div>
+        <div class="panel reveal">
+          <h3>Currently</h3>
+          <p style="color:var(--muted);margin:0 0 .8rem">Final-year student in placement season. WoodCorp Celonis work is my major project, with Dr G Senthil Kumar as guide. The Incident Triage Agent is my newest build, and the Renault diagnostics paper is in draft.</p>
+          <p style="color:var(--muted);margin:0">I also run a YouTube channel, Gladwin Shorts, at youtube.com/@gladwinshorts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" aria-label="Contact">
+    <div class="container">
+      <div class="contact-box reveal">
+        <h2>Let us build something reliable.</h2>
+        <p>Open to conversations about software engineering, cloud infrastructure, AI/ML, process mining, and meaningful project opportunities.</p>
+        <div class="contact-lines">
+          <a href="mailto:gb5608@srmist.edu.in">gb5608@srmist.edu.in</a>
+          <a href="https://www.linkedin.com/in/gladwinbenjamin/" target="_blank" rel="noreferrer">LinkedIn: gladwinbenjamin</a>
+          <a href="tel:+917814861743">78148 61743</a>
+          <span>Chengalpattu, Tamil Nadu</span>
+        </div>
+        <div class="hero-cta" style="margin-bottom:0">
+          <a class="btn btn-primary" href="mailto:gb5608@srmist.edu.in">Get in touch</a>
+          <a class="btn btn-ghost" href="https://github.com/ayerna" target="_blank" rel="noreferrer">GitHub: ayerna</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/gladwinbenjamin/" target="_blank" rel="noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="container">
+    <span>© <span id="year">2026</span> Gladwin Benjamin. Built with HTML, CSS, and a little JavaScript. No build step.</span>
+    <a href="#top">Back to top</a>
+  </div>
+</footer>
+<script>
+(function(){
+  var root=document.documentElement;
+  var toggle=document.getElementById("themeToggle");
+  var saved=null;
+  try{saved=localStorage.getItem("gb-theme");}catch(e){}
+  if(saved==="light"||saved==="dark"){root.setAttribute("data-theme",saved);}
+  function label(){toggle.textContent=root.getAttribute("data-theme")==="dark"?"Light mode":"Dark mode";}
+  label();
+  toggle.addEventListener("click",function(){
+    var next=root.getAttribute("data-theme")==="dark"?"light":"dark";
+    root.setAttribute("data-theme",next);
+    try{localStorage.setItem("gb-theme",next);}catch(e){}
+    label();
+  });
+  var copyBtn=document.getElementById("copyEmail");
+  copyBtn.addEventListener("click",function(){
+    var email="gb5608@srmist.edu.in";
+    function done(){copyBtn.textContent="Copied";setTimeout(function(){copyBtn.textContent="Copy email";},1800);}
+    if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(email).then(done,function(){window.location.href="mailto:"+email;});}
+    else{window.location.href="mailto:"+email;}
+  });
+  var buttons=document.querySelectorAll(".filter-btn");
+  var cards=document.querySelectorAll("#projectGrid .card");
+  buttons.forEach(function(btn){
+    btn.addEventListener("click",function(){
+      buttons.forEach(function(b){b.setAttribute("aria-pressed","false");});
+      btn.setAttribute("aria-pressed","true");
+      var f=btn.getAttribute("data-filter");
+      cards.forEach(function(card){
+        var show=f==="all"||(card.getAttribute("data-category")||"").split(" ").indexOf(f)>-1;
+        card.style.display=show?"":"none";
+        if(show){card.classList.add("visible");}
+      });
+    });
+  });
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add("visible");io.unobserve(e.target);}});
+  },{threshold:.08});
+  document.querySelectorAll(".reveal").forEach(function(el){io.observe(el);});
+  document.getElementById("year").textContent=new Date().getFullYear();
+})();
+</script>
+</body>
 </html>
